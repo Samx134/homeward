@@ -41,3 +41,5 @@ jobs:
         with:
           name: test_report
           path: report.html
+      - name: List all files to debug
+        run: find . -name report.html
