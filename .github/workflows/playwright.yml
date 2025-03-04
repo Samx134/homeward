@@ -34,7 +34,7 @@ jobs:
       - name: Ensure browsers are installed
         run: python -m playwright install --with-deps
       - name: Run your tests
-        run: pytest test_kadai.py -html=report.html --self-contained-html
+        run: pytest test_kadai.py --html=report.html --self-contained-html
       - name: Archive HTML report
         uses: actions/upload-artifact@v4
         if: always()
