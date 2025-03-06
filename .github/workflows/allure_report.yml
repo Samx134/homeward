@@ -33,6 +33,10 @@ jobs:
       - name: Ensure browsers are installed
         run: python -m playwright install --with-deps
 
+      - name: Run Playwright tests
+        run: |
+          pytest test_kadai.py --alluredir=build/allure-results
+
       - name: Test marketplace action
         uses: simple-elf/allure-report-action@master
         if: always()
