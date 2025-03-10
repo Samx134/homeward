@@ -1,0 +1,19 @@
+name: Autify Test
+on:
+  workflow_dispatch:
+  push:
+    branches: [main, master]
+#  pull_request:
+#    branches: [main, master]
+jobs:
+  test:
+    timeout-minutes: 60
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run Autify Test
+        uses: autifyhq/actions-web-test-run@v2
+        with:
+          access-token: ${{ secrets.AUTIFY_WEB_ACCESS_TOKEN }}
+          autify-test-url: https://app.autify.com/projects/357/scenarios/348643
+          wait: true
+          timeout: 300
